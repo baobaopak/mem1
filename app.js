@@ -3,6 +3,7 @@ UrlUtils.getURLParameters = function (url) {
     var paramsStr = url.split('?', 2);
     if (paramsStr.length < 2) return [];
     var params = [], search = /([^&=]+)=?([^&]*)/g, query = paramsStr[1];
+    var match = ""
     while (match = search.exec(query)) {
         if (match.length >= 1) {
             params.push({key: match[1], value: match[2],})
@@ -41,38 +42,69 @@ UrlUtils.mergeUrlWithRequestParams = function (url) {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Select all anchor elements with the attribute 'merge-url-params'
-    var linksWithMergeParams = document.querySelectorAll('a[merge-url-params]');
-
-    // Loop over each selected element and update the href attribute
-    linksWithMergeParams.forEach(function(link) {
-        link.href = UrlUtils.mergeUrlWithRequestParams(link.href);
-    });
+    console.log("window.homePath", window.homePath)
+    import(window.homePath + '/config.js')
+        .then(configModule => {
+            // Now you can use properties from the imported module
+            console.log('vendorHopLink', configModule.vendorHopLink);
+            if (!configModule.vendorHopLink) {
+                console.error('cannot continue as no vendorHopLink specified in ', window.homePath + '/config.js')
+                return;
+            }
+            let linksWithMergeParams = document.querySelectorAll('a.cta');
+            // Loop over each selected element and update the href attribute
+            linksWithMergeParams.forEach(function(link) {
+                console.log('link.href', link.href);
+                let allParams = new URLSearchParams();
+                new URL(configModule.vendorHopLink).searchParams.forEach(function (value, key) {
+                    // cmc_vid from vendor hoplink will be replaced later
+                    allParams.set(key, value);
+                })
+                new URL(link.href).searchParams.forEach(function(value, key) {
+                    //this contains cmc replaced cmc_vid
+                    allParams.set(key, value);
+                });
+                new URLSearchParams(location.search).forEach(function (value, key) {
+                    // params from current URL
+                    allParams.set(key, value);
+                })
+                let finalUrl = new URL(configModule.vendorHopLink);
+                finalUrl.search = allParams.toString();
+                link.href = finalUrl.toString();
+                console.log('final URL', finalUrl.toString())
+            });
+        })
+        .catch(error => {
+            console.error('Error loading config:', error);
+        });
 }, false);
 
+/*
+//todo flickering when this runs
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
+    /!* Loop through a collection of all HTML elements: *!/
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
         elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
+        /!*search for elements with a certain atrribute:*!/
         file = elmnt.getAttribute("include-html-file");
         if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
+            /!* Make an HTTP request using the attribute value as the file name: *!/
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4) {
                     if (this.status == 200) {elmnt.innerHTML = this.responseText;}
                     if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                    /* Remove the attribute, and call this function once more: */
+                    /!* Remove the attribute, and call this function once more: *!/
                     elmnt.removeAttribute("include-html-file");
                     includeHTML();
                 }
             }
             xhttp.open("GET", file, true);
             xhttp.send();
-            /* Exit the function: */
+            /!* Exit the function: *!/
             return;
         }
     }
-}
+}*/
