@@ -1,0 +1,125 @@
+.main-body {
+  text-align: center;
+  width: 871px;
+  margin: 0 auto; /* Center the content on the page */
+}
+
+.header {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 700;
+  line-height: 45px;
+  font-size: 36px;
+  padding: 20px 0;
+}
+
+.header-highlight {
+  color: rgb(1, 144, 222);
+}
+
+.lander-img-container {
+  padding: 20px 0;
+}
+
+.lander-img {
+  border: 3px solid black;
+  width: 728px;
+  height: 410px;
+}
+
+.watch-button {
+  width: 100%;
+
+  background-color: rgb(21, 95, 247);
+  color: white; /* White text for the button */
+  padding: 15px 0; /* Add padding for visual appeal */
+  margin-bottom: 20px;
+  text-align: center; /* Center the text within the button */
+  border-radius: 5px; /* Round the corners slightly */
+  box-sizing: border-box;
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Ensure button behaves like a button */
+  font-weight: 400;
+  text-decoration: none;
+  font-family: 'Yantramanav', sans-serif;
+  line-height: 25px;
+  font-size: 25px;
+}
+
+pre b {
+  font-weight: bold; /* Apply bold style to text inside strong tags */
+}
+
+.paragraph {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  line-height: 23px;
+  font-size: 19px;
+  padding-left: 10px; /*somehow need padding to make text looked centered*/
+}
+
+.copyright-txt {
+  width: 100%;
+  padding-top: 20px;
+  /*-webkit-text-size-adjust: 100%;*/
+  /*white-space: pre-wrap;*/
+  word-wrap: break-word;
+  letter-spacing: 0em;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(91, 90, 90);
+  font-weight: 700;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.disclaimer-txt {
+  letter-spacing: 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(91, 90, 90);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+footer {
+  background-color: rgb(240, 242, 244); /* Set background color */
+  width: 100%; /* Expand background to full width */
+  position: relative; /* Allow for positioning of inner content */
+}
+
+footer > * { /* Target all direct children of the footer */
+  max-width: 900px; /* Maintain existing content width */
+  margin: 0 auto; /* Center content within footer */
+  padding: 10px; /* Add padding for visual spacing */
+}
+
+.tnc {
+  /*todo bold*/
+  display: flex;
+  justify-content: flex-end;
+  font-family: sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  left: 0;
+  height: 88px;
+  padding: 10px;
+  width: 871px;
+  margin: 0 auto; /* Center the content on the page */
+  gap: 50px;
+}
+
+.tnc-link {
+  padding-top: 20px;
+  color: black;
+}
