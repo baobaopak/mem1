@@ -51,13 +51,14 @@ pre b {
   font-weight: bold; /* Apply bold style to text inside strong tags */
 }
 
-.paragraph {
+.paragraph pre {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-align: left;
   line-height: 23px;
   font-size: 19px;
   padding-left: 10px; /*somehow need padding to make text looked centered*/
+  white-space: pre-wrap;
 }
 
 .copyright-txt {
