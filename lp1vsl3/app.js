@@ -1,31 +1,3 @@
-var needsJQuery = (function () {
-    var jQueryLib = null;
-    var handlers = [];
-
-    function needsJQuery(handler) {
-        if (jQueryLib) {
-            handler(jQueryLib)
-        } else {
-            handlers.push(handler)
-        }
-    }
-
-    needsJQuery.ready = function (handler) {
-        var onDomReady = function () {
-            handler(jQueryLib)
-        };
-        needsJQuery(function ($) {
-            $(onDomReady)
-        })
-    };
-    needsJQuery.loaded = function (jQuery) {
-        jQueryLib = jQuery;
-        while (handlers.length) {
-            handlers.shift()(jQueryLib)
-        }
-    };
-    return needsJQuery
-})();
 var UrlUtils = UrlUtils || {};
 UrlUtils.getURLParameters = function (url) {
     var paramsStr = url.split('?', 2);
@@ -67,11 +39,12 @@ UrlUtils.mergeUrlWithRequestParams = function (url) {
     return resultUrl + anchor
 };
 
-needsJQuery.ready(function ($) {
-    var selector = [uniqueSelector('a[merge-url-params]')].join(',');
-    $(selector).each(function (idx, el) {
-        var url = $(el).attr('href');
-        if (!url) return;
-        $(el).attr('href', UrlUtils.mergeUrlWithRequestParams(url))
-    })
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all anchor elements with the attribute 'merge-url-params'
+    var linksWithMergeParams = document.querySelectorAll('a[merge-url-params]');
+
+    // Loop over each selected element and update the href attribute
+    linksWithMergeParams.forEach(function(link) {
+        link.href = UrlUtils.mergeUrlWithRequestParams(link.href);
+    });
+}, false);
