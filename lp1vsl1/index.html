@@ -10,11 +10,7 @@
 
 </head>
 <body>
-<script>
-    var homePath = window.location.pathname
-    var lastSlashIndex = homePath.lastIndexOf('/');
-    window.homePath = homePath.substring(0, lastSlashIndex);
-</script>
+<script src="config.js"></script>
 <script type="module" src="../app.js"></script>
 <div class="main-body">
     <!-- Header -->
@@ -33,6 +29,8 @@
 
     <!-- Paragraph -->
     <article>
+        <!--todo find a more static way as JS approach cause page to flicker. use html <object>?-->
+        <!--        <div include-html-file=article.html></div>-->
         <div class="paragraph" >
             <pre>
 One startling new scientific discovery is currently sending shockwaves through the world of Alzheimer's research.
