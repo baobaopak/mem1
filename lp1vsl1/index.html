@@ -7,30 +7,30 @@
     <script src="../clickmagic_cmc_mem1.js"></script>
     <script src='//cdn.clkmc.com/cmc.js'></script>
     <link rel="stylesheet" href="../styles.css">
-
 </head>
 <body>
 <script src="config.js"></script>
 <script type="module" src="../app.js"></script>
+
 <div class="main-body">
     <!-- Header -->
-    <div class="header">
-        <span >TOP NEUROSCIENTIST: <span class="header-highlight">Restore Your Cognitive Power with this 10-Second Ritual (Watch Video)</span>
+    <div id="loadingSpinner" class="hidden"></div>
+    <div id="overlay"></div>
+    <div class="heading">
+        <span >TOP NEUROSCIENTIST: <span class="heading-highlight">Restore Your Cognitive Power with this 10-Second Ritual (Watch Video)</span>
         </span>
     </div>
     <!-- Image -->
-    <div class="lander-img-container">
+    <div  class="lander-img-container">
 <!-- todo cmc_vid not replace in edge but works in chrome when running locally why? -->
         <a class="cta" href="https://hop.clickbank.net/?tid=[cmc_vid]"
            target="_top">
             <img class="lander-img" src="lander_image.jpg">
         </a>
     </div>
-
     <!-- Paragraph -->
     <article>
-        <!--todo find a more static way as JS approach cause page to flicker. use html <object>?-->
-        <!--        <div include-html-file=article.html></div>-->
+        <!--todo to Jekyll to modulise the html and generate static website and minify code, and convert code to be older browsers compatible-->
         <div class="paragraph" >
             <pre>
 One startling new scientific discovery is currently sending shockwaves through the world of Alzheimer's research.
@@ -62,12 +62,9 @@ Click the <b>'Watch Now'</b> button below to <b>watch this short, mind-blowing v
 </footer>
 <div class="tnc">
     <a class="tnc-link" href="https://vitalityglow.life/privacy" title="" target="_blank"
-            rel="noopener" pass-params=""><span><b>Privacy</b></span></a>
+            rel="noopener"><span><b>Privacy</b></span></a>
     <a class="tnc-link" href="https://vitalityglow.life/terms" title="" target="_blank"
-       rel="noopener" pass-params=""><span><b>Terms</b></span></a>
+       rel="noopener"><span><b>Terms</b></span></a>
 </div>
-<script>
-    includeHTML();
-</script>
 </body>
 </html>
