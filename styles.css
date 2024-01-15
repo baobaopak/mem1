@@ -140,7 +140,7 @@ footer > * { /* Target all direct children of the footer */
   z-index: 1000; /* Ensure it's above other content */
 }
 
-/*spinner*/
+/*region: spinner*/
 #loadingSpinner {
   z-index: 1001;
   position: fixed;
@@ -188,3 +188,28 @@ footer > * { /* Target all direct children of the footer */
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/*endregion*/
+
+/*region mobile screen handling*/
+@media screen and (max-width: 871px) {
+  .main-body {
+    width: 100%;
+  }
+  .tnc {
+    width: 100%;
+  }
+  .paragraph pre {
+    font-size: 1.5em; /* Enlarge the font size by 20% for mobile screens*/
+  }
+  .heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .lander-img {
+    width: 100%; /* Set the width to 100% for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+/*endregion*/
