@@ -191,7 +191,7 @@ footer > * { /* Target all direct children of the footer */
 /*endregion*/
 
 /*region mobile screen handling*/
-@media screen and (max-width: 871px) {
+@media screen and (max-width: 871px), only screen and (max-device-width: 871px) {
   .main-body {
     width: 100%;
   }
