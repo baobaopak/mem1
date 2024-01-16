@@ -29,20 +29,20 @@
 }
 
 .watch-button {
-  width: 100%;
-
+  border-radius: 5px; /* Round the corners slightly */
   background-color: rgb(21, 95, 247);
   color: white; /* White text for the button */
   padding: 15px 0; /* Add padding for visual appeal */
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center; /* Center the text within the button */
-  border-radius: 5px; /* Round the corners slightly */
   box-sizing: border-box;
   text-decoration: none; /* Remove underline from text */
   display: inline-block; /* Ensure button behaves like a button */
   font-weight: 400;
   text-decoration: none;
   font-family: 'Yantramanav', sans-serif;
+
+  width: 100%;
   line-height: 25px;
   font-size: 25px;
 }
@@ -63,7 +63,7 @@ pre b {
 
 .copyright-txt {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 40px;
   /*-webkit-text-size-adjust: 100%;*/
   /*white-space: pre-wrap;*/
   word-wrap: break-word;
@@ -106,14 +106,13 @@ footer > * { /* Target all direct children of the footer */
 }
 
 .tnc {
-  /*todo bold*/
   display: flex;
   justify-content: flex-end;
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   box-sizing: border-box;
   left: 0;
-  height: 88px;
+  height: 120px;
   padding: 10px;
   width: 871px;
   margin: 0 auto; /* Center the content on the page */
@@ -193,21 +192,40 @@ footer > * { /* Target all direct children of the footer */
 /*region mobile screen handling*/
 @media screen and (max-width: 871px), only screen and (max-device-width: 871px) {
   .main-body {
-    width: 100%;
-  }
-  .tnc {
-    width: 100%;
+    width: 90%;
   }
   .paragraph pre {
-    font-size: 1.5em; /* Enlarge the font size by 20% for mobile screens*/
+    font-size: 1.8em; /* Enlarge the font size*/
+    line-height: 1.2;
+  }
+  .tnc {
+    width: 90%;
+    font-size: 2em;
+  }
+  .tnc-link {
+    padding-top: 50px;
+    height: 140px;
+  }
+  .copyright-txt {
+    font-size: 1.3em;
+    line-height: 1.1;
+  }
+  .disclaimer-txt {
+    font-size: 1.3em;
+    line-height: 1.1;
   }
   .heading {
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 40px;
+    line-height: 1.3;
   }
   .lander-img {
     width: 100%; /* Set the width to 100% for responsiveness */
     height: auto; /* Maintain aspect ratio */
+  }
+  .watch-button {
+    width: 90%;
+    line-height: 65px;
+    font-size: 45px;
   }
 }
 
