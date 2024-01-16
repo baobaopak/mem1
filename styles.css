@@ -116,11 +116,11 @@ footer > * { /* Target all direct children of the footer */
   padding: 10px;
   width: 871px;
   margin: 0 auto; /* Center the content on the page */
-  gap: 50px;
 }
 
 .tnc-link {
   padding-top: 20px;
+  margin-left: 50px;
   color: black;
 }
 
