@@ -16,8 +16,7 @@ function showSpinner(linkElement) {
 }
 
 // Function to parse query string parameters from a URL
-function parseQueryString(url) {
-    var params = {};
+function parseQueryString(url, params) {
     var queryString = url.split('?')[1];
 
     if (queryString) {
@@ -49,9 +48,10 @@ function serializeQueryString(params) {
 
 function mergeHopLinkParams(hopLink, linkElement) {
     // old-browser compatible code
-    var allParams = parseQueryString(hopLink);
-    Object.assign(allParams, parseQueryString(linkElement.href));
-    Object.assign(allParams, parseQueryString(location.search));
+    var allParams = {}
+    parseQueryString(hopLink, allParams);
+    parseQueryString(linkElement.href, allParams);
+    parseQueryString(location.search, allParams);
 
 // Serialize the combined parameters into a query string
     var queryString = serializeQueryString(allParams);
