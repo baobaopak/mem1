@@ -48,25 +48,6 @@ function serializeQueryString(params) {
 }
 
 function mergeHopLinkParams(hopLink, linkElement) {
-    // merge hop link params
-/*    var allParams = new URLSearchParams();
-    new URL(hopLink).searchParams.forEach(function (value, key) {
-        // cmc_vid from vendor hoplink will be replaced later
-        allParams.set(key, value);
-    })
-    new URL(linkElement.href).searchParams.forEach(function (value, key) {
-        //this contains cmc replaced cmc_vid
-        allParams.set(key, value);
-    });
-    new URLSearchParams(location.search).forEach(function (value, key) {
-        // params from current URL
-        allParams.set(key, value);
-    })
-    var finalUrl = new URL(hopLink);
-    finalUrl.search = allParams.toString();
-    linkElement.href = finalUrl.toString();
-    console.log('final URL', finalUrl.toString());*/
-
     // old-browser compatible code
     var allParams = parseQueryString(hopLink);
     Object.assign(allParams, parseQueryString(linkElement.href));
