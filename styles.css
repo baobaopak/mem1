@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .main-body {
   text-align: center;
   width: 871px;
@@ -5,7 +9,6 @@
 }
 
 .heading {
-  font-family: 'Roboto', sans-serif;
   letter-spacing: 0;
   text-align: center;
   font-weight: 700;
@@ -82,7 +85,6 @@ pre b {
   letter-spacing: 0;
   text-align: center;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-decoration: none;
   line-height: 20px;
@@ -108,7 +110,6 @@ footer > * { /* Target all direct children of the footer */
 .tnc {
   display: flex;
   justify-content: flex-end;
-  font-family: sans-serif;
   font-weight: bold;
   box-sizing: border-box;
   left: 0;
