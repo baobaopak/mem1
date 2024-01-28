@@ -7,3 +7,5 @@ _site/
 vendor/
 .idea
 !.idea/runConfigurations
+ # somehow build not work with lock file
+/Gemfile.lock
